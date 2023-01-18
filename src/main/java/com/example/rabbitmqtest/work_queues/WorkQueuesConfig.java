@@ -4,14 +4,16 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @Profile({"work_queues"})
 @Configuration
+@EnableScheduling
 public class WorkQueuesConfig {
 
     @Bean
     public Queue hello() {
-        return new Queue("hello");
+        return new Queue("work_queues");
     }
 
     @Profile("receiver")

@@ -4,7 +4,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.util.StopWatch;
 
-@RabbitListener(queues = "hello")
+@RabbitListener(queues = "work_queues")
 public class WorkQueuesReceiver {
 
     private final int instance;
